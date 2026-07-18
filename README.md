@@ -41,21 +41,19 @@ Live site: <https://abjadify.com/>
 Because it's fully static, you only need a browser:
 
 ```bash
-git clone https://github.com/<your-username>/abjadify.git
-cd abjadify
+git clone https://github.com/abjadify/free-abjad-calculator.git
+cd free-abjad-calculator
 ```
 
 Then either open `index.html` directly, or serve the folder locally:
 
 ```bash
-# Python 3
+# Python 3 — then visit http://localhost:8000
 python -m http.server 8000
 
-# or Node
+# or Node — it prints the local URL (usually http://localhost:3000)
 npx serve .
 ```
-
-Visit <http://localhost:8000>.
 
 ## Project structure
 
