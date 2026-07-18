@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abjadify — Free Abjad Calculator</title>
+  <meta name="description" content="Abjadify converts each letter of a name into a number using the traditional Abjad system, then totals it — the same method used for centuries in poetry, divination, and chronograms.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IM+Fell+English:ital@0;1&family=Vazirmatn:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="texture"></div>
+
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <a href="#hero" style="display:flex; align-items:baseline; gap:10px;">
+        <span class="logo-fa">Abjadify</span>
+        <span class="logo-en">Free Abjad Calculator</span>
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#table">Abjad Table</a></li>
+        <li><a href="#uses">Use Cases</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#hero" class="nav-cta">Calculate a Name</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero + live calculator -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">The Great Abjad Tradition</span>
+        <div class="headinghero">Every name <em>hides a number</em></div>
+        <h1>Abjad Calculator</h1>
+        <p class="hero-sub">
+          Abjadify converts each letter of your name into a number using the traditional Abjad system, then totals it — the same method used for centuries in poetry, divination, and chronograms.
+        </p>
+        <form class="calc-box" id="calcForm">
+          <input type="text" id="nameInput" value="ابجدیفای" placeholder="Type a name here…" autocomplete="off">
+          <button type="submit">Calculate</button>
+        </form>
+        <label class="hamza-toggle">
+          <input type="checkbox" id="hamzaToggle" checked>
+          <span>Count the hamza (ء)</span>
+        </label>
+        <label class="hamza-toggle">
+          <input type="checkbox" id="maghribiToggle">
+          <span>Use the Maghribi (western) order</span>
+        </label>
+        <span class="calc-hint">Only Persian and Arabic letters are counted.</span>
+      </div>
+
+      <div class="seal-card">
+        <div class="tiles-row" id="tilesRow" data-empty-text="No calculable letters found"></div>
+        <div class="seal-wrap">
+          <div class="seal">
+            <span class="seal-total" id="sealTotal">111</span>
+          </div>
+          <span class="seal-label">Abjad total</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reference table -->
+  <section id="table">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">Reference table</span>
+        <h2 class="section-title">Abjad letters and their values</h2>
+        <p class="section-desc">
+          Letters are grouped into the eight traditional mnemonic words — Abjad, Hawwaz, Hutti and so on — the same order once used to memorize their values.
+        </p>
+      </div>
+      <figure class="chart-frame">
+        <img
+          src="assets/images/abjad-values-chart.webp"
+          alt="Arabic Abjad numerical values chart, showing each letter of the alphabet with its traditional numeric value"
+          loading="lazy"
+          decoding="async">
+        <figcaption>The classic Abjad Kabir chart — or explore it interactively below</figcaption>
+      </figure>
+      <div class="abjad-groups" id="abjadGroups"></div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">How it works</span>
+        <h2 class="section-title">From name to number in three steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">1</span>
+          <h3>Type a name</h3>
+          <p>Enter a Persian or Arabic name — yours, your child's, or your business's.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <h3>Each letter becomes a number</h3>
+          <p>Every letter takes its value from the Abjad Kabir table, just like above.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <h3>See the total</h3>
+          <p>The sum appears in the central seal, ready for divination, chronograms, or curiosity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use cases -->
+  <section id="uses">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">Use cases</span>
+        <h2 class="section-title">Where Abjad is used today</h2>
+      </div>
+      <div class="uses">
+        <div class="use-card">
+          <div class="use-icon">1</div>
+          <h4>Naming a baby</h4>
+          <p>Compare a few name options by their Abjad total.</p>
+        </div>
+        <div class="use-card">
+          <div class="use-icon">2</div>
+          <h4>Abjad divination</h4>
+          <p>One of the oldest name-based fortune-telling methods.</p>
+        </div>
+        <div class="use-card">
+          <div class="use-icon">3</div>
+          <h4>Poetic chronograms</h4>
+          <p>Finding a phrase whose letters sum to a target year.</p>
+        </div>
+        <div class="use-card">
+          <div class="use-icon">4</div>
+          <h4>Naming a business</h4>
+          <p>Weigh a few brand name options by their Abjad number.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="about">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="logo" style="margin-bottom:14px;">
+          <span class="logo-fa">Abjadify</span>
+          <span class="logo-en">Free Abjad Calculator</span>
+        </div>
+        <p class="footer-note">
+          Abjadify is built for exploring the Abjad tradition and for fun — it isn't a substitute for expert advice.
+        </p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Tool</h5>
+          <a href="#hero">Calculate a name</a>
+          <a href="#table">Abjad table</a>
+        </div>
+        <div class="footer-col">
+          <h5>More</h5>
+          <a href="#uses">Use cases</a>
+          <a href="#about">About Abjad</a>
+          <a href="https://abjadify.com/" target="_blank" rel="noopener">Abjadify</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; <span id="year"></span> Abjadify</span>
+      <span class="footer-copy">Abjad Kabir table</span>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" hidden>
+  <span class="back-to-top-arrow" aria-hidden="true">&uarr;</span>
+</button>
+
+<script>
+  // fill the copyright year without any build step
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
